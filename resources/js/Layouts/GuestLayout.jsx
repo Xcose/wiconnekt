@@ -22,7 +22,9 @@ export default function Guest({ children }) {
                         <nav className="tw-flex tw-flex-1 tw-justify-end tw-space-x-8 bg-gray tw-right-auto">
                             <NavLink
                                 href={route("home")}
-                                active={route().current("home")}
+                                active={
+                                    route().current("home") || route().has("")
+                                }
                             >
                                 Home
                             </NavLink>

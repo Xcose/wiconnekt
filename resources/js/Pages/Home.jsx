@@ -7,7 +7,7 @@ import Slider from "../Components/ImageCarousel";
 function Home() {
     return (
         <GuestLayout>
-            <Head title="About" />
+            <Head title="Home" />
             <div className="vh-100 d-flex flex-column">
                 <div className="row flex-grow-1">
                     <div className="col col-md-6 border bg-white d-flex justify-content-center align-items-center">

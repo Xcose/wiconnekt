@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -30,13 +31,23 @@ Route::get('/services', function () {
     return Inertia::render('Services');
 })->name('services');
 
-Route::get('/faq', function () {
-    return Inertia::render('Faq');
-})->name('faq');
+Route::get('/faq', [HomeController::class, 'Faq'])->name('faq');
 
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
+
+Route::get('/lte', function () {
+    return Inertia::render('LTE/Lte');
+})->name('lte');
+
+Route::get('/adsl', [HomeController::class, 'Adsl'])->name('adsl');
+
+Route::get('/telkom', [HomeController::class, 'Telkom'])->name('telkom');
+
+Route::get('/mtn', [HomeController::class, 'MTN'])->name('mtn');
+
+Route::get('/voip', [HomeController::class, 'Voip'])->name('voip');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
